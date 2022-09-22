@@ -1,7 +1,6 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -13,9 +12,6 @@ module.exports = {
     symlinks: false,
     cacheWithContext: false,
     plugins: [
-      new TsconfigPathsPlugin({
-        configFile: './tsconfig.paths.json',
-      }),
     ],
   },
   output: {
@@ -27,7 +23,8 @@ module.exports = {
     concatenateModules: false,
   },
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [nodeExternals({
+  }), "source-map-support/register"],
   module: {
     rules: [
       // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
@@ -39,6 +36,7 @@ module.exports = {
             path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname, '.serverless'),
             path.resolve(__dirname, '.webpack'),
+            path.resolve(__dirname, '.yarn'),
           ],
         ],
         options: {
