@@ -1,33 +1,25 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
-const nodeExternals = require('webpack-node-externals');
 
+console.log({ isLocal: slsw.lib.webpack.isLocal})
 module.exports = {
   context: __dirname,
   mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
   entry: slsw.lib.entries,
   devtool: slsw.lib.webpack.isLocal ? 'eval-cheap-module-source-map' : 'source-map',
   resolve: {
-    extensions: ['.mjs', '.json', '.ts'],
+    extensions: [".tsx", ".ts", ".json", ".mjs", ".js"],
     symlinks: false,
     cacheWithContext: false,
     plugins: [
     ],
   },
-  output: {
-    libraryTarget: 'commonjs',
-    path: path.join(__dirname, '.webpack'),
-    filename: '[name].js',
-  },
   optimization: {
     concatenateModules: false,
   },
   target: 'node',
-  externals: [nodeExternals({
-  }), "source-map-support/register"],
   module: {
     rules: [
-      // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
       {
         test: /\.(tsx?)$/,
         loader: 'ts-loader',
@@ -36,7 +28,6 @@ module.exports = {
             path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname, '.serverless'),
             path.resolve(__dirname, '.webpack'),
-            path.resolve(__dirname, '.yarn'),
           ],
         ],
         options: {
@@ -46,5 +37,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [],
+  output: {
+    libraryTarget: 'commonjs',
+    path: path.join(__dirname, '.webpack'),
+    filename: '[name].js',
+  },
 };

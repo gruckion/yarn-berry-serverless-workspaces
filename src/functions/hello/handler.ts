@@ -1,7 +1,6 @@
 import { formatJSONResponse } from 'libs/apiGateway';
 import { middyfy } from 'libs/lambda';
 import { Handler } from 'aws-lambda';
-import { handlerPath } from "libs/handlerResolver";
 
 const hello: Handler<any> = async (event) => {
   return formatJSONResponse({
@@ -9,7 +8,5 @@ const hello: Handler<any> = async (event) => {
     event,
   });
 }
-
-console.log({ x: handlerPath(__dirname)})
 
 export const main = middyfy(hello);

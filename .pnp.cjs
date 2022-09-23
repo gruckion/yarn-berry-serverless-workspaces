@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@serverless/typescript", "npm:3.21.0"],\
             ["@types/aws-lambda", "npm:8.10.104"],\
             ["@types/node", "npm:18.7.18"],\
+            ["@types/source-map-support", "npm:0.5.6"],\
             ["@yarnpkg/plugin-typescript", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:4.0.0-rc.20"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.20"],\
             ["fork-ts-checker-webpack-plugin", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:7.2.13"],\
@@ -51,8 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:10.9.1"],\
             ["tsconfig-paths-webpack-plugin", "npm:4.0.0"],\
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=a1c5e5"],\
-            ["webpack", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:5.74.0"],\
-            ["webpack-node-externals", "npm:3.0.0"]\
+            ["webpack", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:5.74.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -773,6 +773,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-semver-npm-7.3.12-c91001a94c-35536b2fc5.zip/node_modules/@types/semver/",\
           "packageDependencies": [\
             ["@types/semver", "npm:7.3.12"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/source-map-support", [\
+        ["npm:0.5.6", {\
+          "packageLocation": "./.yarn/cache/@types-source-map-support-npm-0.5.6-5db5ff1656-b2b52b3e49.zip/node_modules/@types/source-map-support/",\
+          "packageDependencies": [\
+            ["@types/source-map-support", "npm:0.5.6"],\
+            ["source-map", "npm:0.6.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5848,6 +5858,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@serverless/typescript", "npm:3.21.0"],\
             ["@types/aws-lambda", "npm:8.10.104"],\
             ["@types/node", "npm:18.7.18"],\
+            ["@types/source-map-support", "npm:0.5.6"],\
             ["@yarnpkg/plugin-typescript", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:4.0.0-rc.20"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.20"],\
             ["fork-ts-checker-webpack-plugin", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:7.2.13"],\
@@ -5861,8 +5872,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:10.9.1"],\
             ["tsconfig-paths-webpack-plugin", "npm:4.0.0"],\
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=a1c5e5"],\
-            ["webpack", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:5.74.0"],\
-            ["webpack-node-externals", "npm:3.0.0"]\
+            ["webpack", "virtual:66f6dca52becca277b026feba11bb3e4d024fc947bb6b0429c10deaa0fbcacf18d9628b789e1e8c18cfaddeb62ba225d8d52f6d04e9f2dee5585d32df0aff79a#npm:5.74.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -6934,15 +6944,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/webpack-cli",\
             "webpack-cli"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["webpack-node-externals", [\
-        ["npm:3.0.0", {\
-          "packageLocation": "./.yarn/cache/webpack-node-externals-npm-3.0.0-72d3aecadb-355080c35c.zip/node_modules/webpack-node-externals/",\
-          "packageDependencies": [\
-            ["webpack-node-externals", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

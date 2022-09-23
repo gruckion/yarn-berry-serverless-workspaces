@@ -1,5 +1,3 @@
-import "source-map-support/register";
-
 import middy from "@middy/core"
 import middyJsonBodyParser from "@middy/http-json-body-parser"
 import { Handler } from "aws-lambda"

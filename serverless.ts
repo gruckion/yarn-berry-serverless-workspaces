@@ -7,7 +7,7 @@ const serverlessConfiguration: AWS = {
   frameworkVersion: "3",
   provider: {
     name: "aws",
-    runtime: "nodejs12.x",
+    runtime: "nodejs14.x",
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
@@ -21,12 +21,12 @@ const serverlessConfiguration: AWS = {
   custom: {
     webpack: {
       webpackConfig: "./webpack.config.js",
-      includeModules: true,
+      keepOutputDirectory: false,
       packager: "yarn",
       packagerOptions: {
         noInstall: true,
       },
-    },
+    }
   },
   functions: {
     hello
