@@ -4,15 +4,15 @@ node_modules
 .yarn/cache
 
 # local optimisation file
-.yarn/install-state.gz
-.yarn/*
-!.yarn/patches
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-# maps for node to find packages - need to unignore this to support yarn zero-installs
-.pnp.*
+# .yarn/install-state.gz
+# .yarn/*
+# !.yarn/patches
+# !.yarn/releases
+# !.yarn/plugins
+# !.yarn/sdks
+# !.yarn/versions
+# # maps for node to find packages - need to unignore this to support yarn zero-installs
+# .pnp.*
 
 # machine-specific files - may need to unignore this to support yarn zero-installs
 # .yarn/unplugged
