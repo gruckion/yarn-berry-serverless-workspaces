@@ -16,6 +16,10 @@ node_modules
 # maps for node to find packages - need to unignore this to support yarn zero-installs
 .pnp.*
 
+yarn-error.log
+tsconfig.tsbuildinfo
+dist/
+
 # machine-specific files - may need to unignore this to support yarn zero-installs
 .yarn/unplugged
 
@@ -31,3 +35,5 @@ jspm_packages
 
 # Webpack directories
 .webpack
+
+
