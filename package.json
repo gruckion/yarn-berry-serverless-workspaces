@@ -7,13 +7,18 @@
   "license": "MIT",
   "scripts": {
     "deploy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run deploy",
-    "destroy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run destroy"
+    "destroy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run destroy",
+    "package": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run package",
+    "clean": "yarn workspaces foreach run clean",
+    "fix-project-references": "utils-typescript-references --skipRoot",
+    "fix-project-references-all": "utils-typescript-references"
   },
   "workspaces": [
     "packages/*",
     "lambdas/*"
   ],
-  "dependencies": {
+  "devDependencies": {
+    "@goldstack/utils-typescript-references": "0.3.2",
     "typescript": "^4.8.3"
   }
 }

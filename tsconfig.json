@@ -1,7 +1,9 @@
 {
   "baseUrl": ".",
   "compilerOptions": {
-    "lib": ["ESNext"],
+    "lib": [
+      "ESNext"
+    ],
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -13,7 +15,10 @@
     "outDir": "lib",
     "strict": true
   },
-  "include": ["src/**/*.ts", "serverless.ts"],
+  "include": [
+    "src/**/*.ts",
+    "serverless.ts"
+  ],
   "exclude": [
     "node_modules/**/*",
     ".serverless/**/*",
@@ -23,10 +28,10 @@
   ],
   "references": [
     {
-      "path": "packages/common"
-    },
-    {
       "path": "lambdas/hello"
     },
+    {
+      "path": "packages/common"
+    }
   ]
 }
