@@ -199,6 +199,49 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@gruckion/common@workspace:*, @gruckion/common@workspace:packages/common":
+  version: 0.0.0-use.local
+  resolution: "@gruckion/common@workspace:packages/common"
+  dependencies:
+    "@middy/core": ^1.5.2
+    "@middy/http-json-body-parser": ^1.5.2
+    "@serverless/typescript": ^2.23.0
+    "@types/aws-lambda": ^8.10.71
+    "@types/node": ^14.14.25
+    "@types/source-map-support": ^0
+    aws-sdk: ^2.1152.0
+    json-schema-to-ts: ^1.5.0
+    source-map-support: ^0.5.21
+    typescript: ^4.8.3
+  languageName: unknown
+  linkType: soft
+
+"@gruckion/lambda-hello@workspace:lambdas/hello":
+  version: 0.0.0-use.local
+  resolution: "@gruckion/lambda-hello@workspace:lambdas/hello"
+  dependencies:
+    "@gruckion/common": "workspace:*"
+    "@middy/core": ^3.3.4
+    "@middy/http-json-body-parser": ^3.3.4
+    "@serverless/typescript": ^3.21.0
+    "@types/aws-lambda": ^8.10.104
+    "@types/node": ^18.7.18
+    "@yarnpkg/plugin-typescript": ^4.0.0-rc.20
+    "@yarnpkg/pnpify": ^4.0.0-rc.20
+    fork-ts-checker-webpack-plugin: ^7.2.13
+    json-schema-to-ts: ^2.5.5
+    libs: "link:./src/libs"
+    serverless: ^3.22.0
+    serverless-webpack: ^5.9.1
+    src: "link:./src"
+    ts-loader: ^9.4.1
+    ts-node: ^10.9.1
+    tsconfig-paths-webpack-plugin: ^4.0.0
+    typescript: 4.4.4
+    webpack: ^5.74.0
+  languageName: unknown
+  linkType: soft
+
 "@jridgewell/gen-mapping@npm:^0.3.0":
   version: 0.3.2
   resolution: "@jridgewell/gen-mapping@npm:0.3.2"
@@ -277,10 +320,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@middy/core@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "@middy/core@npm:1.5.2"
+  dependencies:
+    once: ^1.4.0
+  checksum: f833cc70f12c5836d109f2ad204b4fb4f1f65b16fef6a879fed2e4dbd0bb4042e9d5d960c697fd3199aab439d8d2798f09da8b166ad259a14642a92cfccc7d8c
+  languageName: node
+  linkType: hard
+
 "@middy/core@npm:^3.3.4":
   version: 3.3.4
   resolution: "@middy/core@npm:3.3.4"
   checksum: 04bdf8f646d87e1ccd0696f6e69b0224f092258a4d24be8a933c910096c8021bffc2580d6d9a931c60bbafa0298f845b63d4a33cf6c484add65260d1d6ea4c9f
+  languageName: node
+  linkType: hard
+
+"@middy/http-json-body-parser@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "@middy/http-json-body-parser@npm:1.5.2"
+  dependencies:
+    "@types/http-errors": ^1.6.1
+    content-type: ^1.0.4
+    http-errors: ^1.6.3
+  peerDependencies:
+    "@middy/core": ">=1.0.0-alpha"
+  checksum: 84f58df29479e8f10fb79813ec57dbba7bbff8f07d8a05fc209829e78e95237105e1b6101eb8a87afba2bd189eadcbd4b83671f6288825fecf584796fa5dba16
   languageName: node
   linkType: hard
 
@@ -408,6 +473,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@serverless/typescript@npm:^2.23.0":
+  version: 2.71.0
+  resolution: "@serverless/typescript@npm:2.71.0"
+  checksum: f32fe413210ed9f594496c62ff6fc0c6e3b061242d1b54df0c4f227daaab6fe9066cab1467477a8adc45e565f1fc5859cce1303b62f572ab819b189e3b059fb2
+  languageName: node
+  linkType: hard
+
 "@serverless/typescript@npm:^3.21.0":
   version: 3.21.0
   resolution: "@serverless/typescript@npm:3.21.0"
@@ -513,7 +585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/aws-lambda@npm:^8.10.104":
+"@types/aws-lambda@npm:^8.10.104, @types/aws-lambda@npm:^8.10.71":
   version: 8.10.104
   resolution: "@types/aws-lambda@npm:8.10.104"
   checksum: a4f0f7e088819d86e289af9d0a2c4066afbf5ee9f0589e212bbac70c3c4d83297c2ae5c354ae3b4d10815785e3dc1517f604ead021b524888db9176e8fdbb511
@@ -580,7 +652,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
+"@types/http-errors@npm:^1.6.1":
+  version: 1.8.2
+  resolution: "@types/http-errors@npm:1.8.2"
+  checksum: ecc365eea98d7eca650d593e742571acc3003742f0dd0fbbb15b8fce286e0f7421644b4140fb9bf701bbb7f1b744aea3967ebe025f0f0811aa5ab2c3d40fe111
+  languageName: node
+  linkType: hard
+
+"@types/json-schema@npm:*, @types/json-schema@npm:^7.0.6, @types/json-schema@npm:^7.0.8, @types/json-schema@npm:^7.0.9":
   version: 7.0.11
   resolution: "@types/json-schema@npm:7.0.11"
   checksum: 527bddfe62db9012fccd7627794bd4c71beb77601861055d87e3ee464f2217c85fca7a4b56ae677478367bbd248dbde13553312b7d4dbc702a2f2bbf60c4018d
@@ -607,6 +686,13 @@ __metadata:
   version: 18.7.18
   resolution: "@types/node@npm:18.7.18"
   checksum: 8aec61f0f96e2a69ce51f1f40f949ca578bbb4fe05d7c0b8ce3aeeb848e90f755837f17f6ac132ca404d974fe9b2974150ad3b4984fc9dc7c3ceddb10bae0167
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^14.14.25":
+  version: 14.18.29
+  resolution: "@types/node@npm:14.18.29"
+  checksum: 43481c1c066dd01578ff137f437a8a901f8fcd3cdc068c36047c444861ab4aac8a62fb4eb6d03738df02006336c90619bfc7860d4e5b259916956942d2e68e88
   languageName: node
   linkType: hard
 
@@ -1261,7 +1347,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-sdk@npm:^2.1195.0":
+"aws-sdk@npm:^2.1152.0, aws-sdk@npm:^2.1195.0":
   version: 2.1222.0
   resolution: "aws-sdk@npm:2.1222.0"
   dependencies:
@@ -1832,6 +1918,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"content-type@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "content-type@npm:1.0.4"
+  checksum: 3d93585fda985d1554eca5ebd251994327608d2e200978fdbfba21c0c679914d5faf266d17027de44b34a72c7b0745b18584ecccaa7e1fdfb6a68ac7114f12e0
+  languageName: node
+  linkType: hard
+
 "cookiejar@npm:^2.1.3":
   version: 2.1.3
   resolution: "cookiejar@npm:2.1.3"
@@ -2070,7 +2163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"depd@npm:^1.1.2":
+"depd@npm:^1.1.2, depd@npm:~1.1.2":
   version: 1.1.2
   resolution: "depd@npm:1.1.2"
   checksum: 6b406620d269619852885ce15965272b829df6f409724415e0002c8632ab6a8c0a08ec1f0bd2add05dc7bd7507606f7e2cc034fa24224ab829580040b835ecd9
@@ -3035,6 +3128,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"http-errors@npm:^1.6.3":
+  version: 1.8.1
+  resolution: "http-errors@npm:1.8.1"
+  dependencies:
+    depd: ~1.1.2
+    inherits: 2.0.4
+    setprototypeof: 1.2.0
+    statuses: ">= 1.5.0 < 2"
+    toidentifier: 1.0.1
+  checksum: d3c7e7e776fd51c0a812baff570bdf06fe49a5dc448b700ab6171b1250e4cf7db8b8f4c0b133e4bfe2451022a5790c1ca6c2cae4094dedd6ac8304a1267f91d2
+  languageName: node
+  linkType: hard
+
 "http-proxy-agent@npm:^5.0.0":
   version: 5.0.0
   resolution: "http-proxy-agent@npm:5.0.0"
@@ -3162,7 +3268,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.3":
+"inherits@npm:2, inherits@npm:2.0.4, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
@@ -3571,6 +3677,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json-schema-to-ts@npm:^1.5.0":
+  version: 1.6.5
+  resolution: "json-schema-to-ts@npm:1.6.5"
+  dependencies:
+    "@types/json-schema": ^7.0.6
+    ts-toolbelt: ^6.15.5
+  checksum: 8b7667f9dcf6bbbf85fcd8752d9e65d8f178e3809b19c5a17eb8e268b70aeae6146688bc57bebe80498e70dcb1d3d7a25e17e4bb346b173d43dca547e74e953e
+  languageName: node
+  linkType: hard
+
 "json-schema-to-ts@npm:^2.5.5":
   version: 2.5.5
   resolution: "json-schema-to-ts@npm:2.5.5"
@@ -3662,9 +3778,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libs@link:./src/libs::locator=serverless-workspaces-pnp%40workspace%3A.":
+"libs@link:./src/libs::locator=%40gruckion%2Flambda-hello%40workspace%3Alambdas%2Fhello":
   version: 0.0.0-use.local
-  resolution: "libs@link:./src/libs::locator=serverless-workspaces-pnp%40workspace%3A."
+  resolution: "libs@link:./src/libs::locator=%40gruckion%2Flambda-hello%40workspace%3Alambdas%2Fhello"
   languageName: node
   linkType: soft
 
@@ -4949,26 +5065,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "serverless-workspaces-pnp@workspace:."
   dependencies:
-    "@middy/core": ^3.3.4
-    "@middy/http-json-body-parser": ^3.3.4
-    "@serverless/typescript": ^3.21.0
-    "@types/aws-lambda": ^8.10.104
-    "@types/node": ^18.7.18
-    "@types/source-map-support": ^0
-    "@yarnpkg/plugin-typescript": ^4.0.0-rc.20
-    "@yarnpkg/pnpify": ^4.0.0-rc.20
-    fork-ts-checker-webpack-plugin: ^7.2.13
-    json-schema-to-ts: ^2.5.5
-    libs: "link:./src/libs"
-    serverless: ^3.22.0
-    serverless-webpack: ^5.9.1
-    source-map-support: ^0.5.21
-    src: "link:./src"
-    ts-loader: ^9.4.1
-    ts-node: ^10.9.1
-    tsconfig-paths-webpack-plugin: ^4.0.0
-    typescript: 4.4.4
-    webpack: ^5.74.0
+    typescript: ^4.8.3
   languageName: unknown
   linkType: soft
 
@@ -5047,6 +5144,13 @@ __metadata:
   version: 1.0.5
   resolution: "setimmediate@npm:1.0.5"
   checksum: c9a6f2c5b51a2dabdc0247db9c46460152ffc62ee139f3157440bd48e7c59425093f42719ac1d7931f054f153e2d26cf37dfeb8da17a794a58198a2705e527fd
+  languageName: node
+  linkType: hard
+
+"setprototypeof@npm:1.2.0":
+  version: 1.2.0
+  resolution: "setprototypeof@npm:1.2.0"
+  checksum: be18cbbf70e7d8097c97f713a2e76edf84e87299b40d085c6bf8b65314e994cc15e2e317727342fa6996e38e1f52c59720b53fe621e2eb593a6847bf0356db89
   languageName: node
   linkType: hard
 
@@ -5206,9 +5310,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"src@link:./src::locator=serverless-workspaces-pnp%40workspace%3A.":
+"src@link:./src::locator=%40gruckion%2Flambda-hello%40workspace%3Alambdas%2Fhello":
   version: 0.0.0-use.local
-  resolution: "src@link:./src::locator=serverless-workspaces-pnp%40workspace%3A."
+  resolution: "src@link:./src::locator=%40gruckion%2Flambda-hello%40workspace%3Alambdas%2Fhello"
   languageName: node
   linkType: soft
 
@@ -5218,6 +5322,13 @@ __metadata:
   dependencies:
     minipass: ^3.1.1
   checksum: fb58f5e46b6923ae67b87ad5ef1c5ab6d427a17db0bead84570c2df3cd50b4ceb880ebdba2d60726588272890bae842a744e1ecce5bd2a2a582fccd5068309eb
+  languageName: node
+  linkType: hard
+
+"statuses@npm:>= 1.5.0 < 2":
+  version: 1.5.0
+  resolution: "statuses@npm:1.5.0"
+  checksum: c469b9519de16a4bb19600205cffb39ee471a5f17b82589757ca7bd40a8d92ebb6ed9f98b5a540c5d302ccbc78f15dc03cc0280dd6e00df1335568a5d5758a5c
   languageName: node
   linkType: hard
 
@@ -5523,6 +5634,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"toidentifier@npm:1.0.1":
+  version: 1.0.1
+  resolution: "toidentifier@npm:1.0.1"
+  checksum: 952c29e2a85d7123239b5cfdd889a0dde47ab0497f0913d70588f19c53f7e0b5327c95f4651e413c74b785147f9637b17410ac8c846d5d4a20a5a33eb6dc3a45
+  languageName: node
+  linkType: hard
+
 "token-types@npm:^4.1.1":
   version: 4.2.1
   resolution: "token-types@npm:4.2.1"
@@ -5625,6 +5743,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-toolbelt@npm:^6.15.5":
+  version: 6.15.5
+  resolution: "ts-toolbelt@npm:6.15.5"
+  checksum: 24ad00cfd9ce735c76c873a9b1347eac475b94e39ebbdf100c9019dce88dd5f4babed52884cf82bb456a38c28edd0099ab6f704b84b2e5e034852b618472c1f3
+  languageName: node
+  linkType: hard
+
 "ts-toolbelt@npm:^9.6.0":
   version: 9.6.0
   resolution: "ts-toolbelt@npm:9.6.0"
@@ -5706,6 +5831,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^4.8.3":
+  version: 4.8.3
+  resolution: "typescript@npm:4.8.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 8286a5edcaf3d68e65c451aa1e7150ad1cf53ee0813c07ec35b7abdfdb10f355ecaa13c6a226a694ae7a67785fd7eeebf89f845da0b4f7e4a35561ddc459aba0
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
   resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=a1c5e5"
@@ -5713,6 +5848,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 3d1b04449662193544b81d055479d03b4c5dca95f1a82f8922596f089d894c9fefbe16639d1d9dfe26a7054419645530cef44001bc17aed1fe1eb3c237e9b3c7
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.8.3#~builtin<compat/typescript>":
+  version: 4.8.3
+  resolution: "typescript@patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 2222d2382fb3146089b1d27ce2b55e9d1f99cc64118f1aba75809b693b856c5d3c324f052f60c75b577947fc538bc1c27bad0eb76cbdba9a63a253489504ba7e
   languageName: node
   linkType: hard
 

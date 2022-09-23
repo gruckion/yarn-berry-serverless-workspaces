@@ -1,38 +1,19 @@
 {
   "name": "serverless-workspaces-pnp",
   "version": "1.0.0",
-  "description": "Serverless aws-nodejs-typescript template",
-  "main": "serverless.ts",
-  "scripts": {
-    "deploy": "sls deploy -s testing",
-    "package": "sls package -s testing",
-    "s": "sls -v"
-  },
-  "dependencies": {
-    "@middy/core": "^3.3.4",
-    "@middy/http-json-body-parser": "^3.3.4",
-    "@yarnpkg/plugin-typescript": "^4.0.0-rc.20",
-    "libs": "link:./src/libs",
-    "source-map-support": "^0.5.21",
-    "src": "link:./src"
-  },
-  "devDependencies": {
-    "@serverless/typescript": "^3.21.0",
-    "@types/aws-lambda": "^8.10.104",
-    "@types/node": "^18.7.18",
-    "@types/source-map-support": "^0",
-    "@yarnpkg/pnpify": "^4.0.0-rc.20",
-    "fork-ts-checker-webpack-plugin": "^7.2.13",
-    "json-schema-to-ts": "^2.5.5",
-    "serverless": "^3.22.0",
-    "serverless-webpack": "^5.9.1",
-    "ts-loader": "^9.4.1",
-    "ts-node": "^10.9.1",
-    "tsconfig-paths-webpack-plugin": "^4.0.0",
-    "typescript": "4.4.4",
-    "webpack": "^5.74.0"
-  },
-  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "packageManager": "yarn@3.2.3",
+  "description": "Mono repo for serverless-workspaces-pnp",
+  "author": "Gruckion",
   "license": "MIT",
-  "packageManager": "yarn@3.2.3"
+  "scripts": {
+    "deploy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run deploy",
+    "destroy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run destroy"
+  },
+  "workspaces": [
+    "packages/*",
+    "lambdas/*"
+  ],
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
 }

@@ -20,5 +20,13 @@
     ".webpack/**/*",
     "_warmup/**/*",
     ".vscode/**/*"
+  ],
+  "references": [
+    {
+      "path": "packages/common"
+    },
+    {
+      "path": "lambdas/hello"
+    },
   ]
 }
