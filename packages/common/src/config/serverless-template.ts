@@ -11,7 +11,7 @@ const serverlessConfigurationTemplate: Partial<AWS> = {
       webpackConfig: "./webpack.config.js",
       keepOutputDirectory: false,
       packager: "yarn",
-    }
+    },
   },
   // Builder requires string[] not object syntax
   plugins: ["serverless-webpack"] as string[],

@@ -3,12 +3,13 @@
 # Requirements
 
 - Ensure you have `yarn` installed with the specified version in `.yarnrc.yml` check with `yarn --version`
-- Ensure you have AWS CLI install `aws --help` 
+- Ensure you have AWS CLI install `aws --help`
 - Install the recommended `.vscode` plugins
 
 # Setup
+
 1. Run `yarn`
-2. Run `yarn dlx @yarnpkg/sdks vscode` 
+2. Run `yarn dlx @yarnpkg/sdks vscode` to fix (pnpify) `eslint`, `prettier` and `typescript`
 3. Press `ctrl+shift+p` whilst in a TypeScript file.
 4. Choose "Select TypeScript Version
 5. Pick "Use Workspace Version"
