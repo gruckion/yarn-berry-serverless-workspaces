@@ -1,27 +1,26 @@
 {
   "name": "serverless-workspaces-pnp",
   "version": "1.0.0",
-  "packageManager": "yarn@3.2.3",
   "description": "Mono repo for serverless-workspaces-pnp",
-  "author": "Gruckion",
   "license": "MIT",
+  "author": "Gruckion",
+  "workspaces": [
+    "packages/*",
+    "lambdas/*"
+  ],
   "scripts": {
     "compile": "yarn fix-project-references-all && tsc --build",
     "deploy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run deploy",
     "destroy": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run destroy",
-    "package": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run package",
     "fix-project-references": "utils-typescript-references --skipRoot",
     "fix-project-references-all": "utils-typescript-references",
     "format": "prettier --loglevel log --config .prettierrc.json --write .",
     "format-check": "prettier --loglevel log --config .prettierrc.json --check .",
     "lint": "eslint . --ext .js,.ts,.tsx,.json,.yml,.yaml",
     "lint-fix": "eslint . --ext .js,.ts,.tsx,.json,.yml,.yaml --fix",
+    "package": "yarn workspaces foreach --parallel --interlaced --include \"@gruckion/lambda*\" run package",
     "package:doctor": "yarn dlx @yarnpkg/doctor ."
   },
-  "workspaces": [
-    "packages/*",
-    "lambdas/*"
-  ],
   "devDependencies": {
     "@goldstack/utils-typescript-references": "0.3.2",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
@@ -35,5 +34,6 @@
     "eslint-plugin-yaml": "^0.5.0",
     "prettier": "^2.2.1",
     "typescript": "^4.8.3"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }
