@@ -14,15 +14,16 @@
     "@gruckion/common": "workspace:*",
     "@middy/core": "^3.3.4",
     "@middy/http-json-body-parser": "^3.3.4",
-    "@yarnpkg/plugin-typescript": "^4.0.0-rc.20",
     "libs": "link:./src/libs",
     "src": "link:./src"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.21.0",
     "@types/aws-lambda": "^8.10.104",
-    "@types/node": "^18.7.18",
+    "@types/node": "^18.7.20",
+    "@yarnpkg/plugin-typescript": "^4.0.0-rc.20",
     "@yarnpkg/pnpify": "^4.0.0-rc.20",
+    "esbuild-loader": "^2.20.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "json-schema-to-ts": "^2.5.5",
     "serverless": "^3.22.0",

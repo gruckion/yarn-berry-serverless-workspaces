@@ -1,11 +1,24 @@
 import type { AWS, AwsLambdaVpcConfig } from "@serverless/typescript";
 import { serverlessConfigurationTemplate } from "./serverless-template";
 
+type ServerlessConfigurationBuilder = {
+  withService: (value: string) => ServerlessConfigurationBuilder;
+  withCustom: (value: AWS["custom"]) => ServerlessConfigurationBuilder;
+  withPlugins: (value: string[]) => ServerlessConfigurationBuilder;
+  withEnvironment: (
+    value: AWS["provider"]["environment"]
+  ) => ServerlessConfigurationBuilder;
+  withVpcSecurityGroupIds: (value: string[]) => ServerlessConfigurationBuilder;
+  withVpcSubnetIds: (value: string[]) => ServerlessConfigurationBuilder;
+  withFunctions: (value: AWS["functions"]) => ServerlessConfigurationBuilder;
+  build: () => AWS;
+};
+
 /**
  * Fluent builder for constructing Serverless configuration
  * @returns {AWS} serverless configuration builder
  */
-export function serverlessConfigurationBuilder() {
+export function serverlessConfigurationBuilder(): ServerlessConfigurationBuilder {
   let service = "";
   let custom: AWS["custom"];
   let plugins: string[] = [];
@@ -98,7 +111,7 @@ export function serverlessConfigurationBuilder() {
    * Builds the Serverless configuration
    * @returns {AWS} serverless configuration
    */
-  function build(): Partial<AWS> {
+  function build(): AWS {
     return {
       ...(serverlessConfigurationTemplate as AWS),
       custom: {

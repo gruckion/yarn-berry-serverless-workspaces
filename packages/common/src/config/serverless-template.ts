@@ -8,7 +8,7 @@ const serverlessConfigurationTemplate: Partial<AWS> = {
   useDotenv: true,
   custom: {
     webpack: {
-      webpackConfig: "./webpack.config.js",
+      webpackConfig: "./webpack.config.ts",
       keepOutputDirectory: false,
       packager: "yarn",
     },
@@ -27,6 +27,10 @@ const serverlessConfigurationTemplate: Partial<AWS> = {
     lambdaHashingVersion: "20201221",
     deploymentBucket: {
       maxPreviousDeploymentArtifacts: 2,
+    },
+    vpc: {
+      securityGroupIds: [],
+      subnetIds: [],
     },
   },
   functions: {},

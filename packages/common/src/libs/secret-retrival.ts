@@ -1,17 +1,26 @@
 import { SecretsManager } from "aws-sdk";
 
+class SecretRetrievalError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "SecretRetrievalError";
+  }
+}
+
 /**
  * Gets the payload of a secret by the secrets ARN
  * @param secretArn the arn string for the secret
  * @returns the secret name
  */
-export const getSecret = async (secretArn: string) => {
+export const getSecret = async <T = Record<string, unknown>>(
+  secretArn: string
+): Promise<T | null> => {
   const client = new SecretsManager();
 
   const secretName = extractSecretName(secretArn);
 
   if (!secretName) {
-    return;
+    throw new SecretRetrievalError("No secret name provided");
   }
 
   try {
@@ -20,9 +29,7 @@ export const getSecret = async (secretArn: string) => {
       .promise();
 
     if (response === undefined) {
-      // eslint-disable-next-line no-console
-      console.error("Error, missing data response for AWS Secret");
-      return null;
+      throw new SecretRetrievalError("Missing data response for AWS Secret");
     }
 
     const { SecretString } = response;
@@ -36,18 +43,18 @@ export const getSecret = async (secretArn: string) => {
     console.error(err);
     throw err;
   }
+
+  return null;
 };
 
 /**
  * AWS doesn't allow us to get the secrets name and Terraform / Serverless string manipulation is poor for completely lacking
  * @param secretArn the arn string for the secret
  * @returns the secret name
- *
- * @example extractSecretName("arn:aws:secretsmanager:eu-west-2:949828138320:secret:live-watt-experian-api-secret-PE9pxq") // live-watt-experian-api-secret
  */
 const extractSecretName = (secretArn: string) => {
   if (!secretArn) {
-    throw new Error("No secretArn provided");
+    throw new SecretRetrievalError("No secretArn provided");
   }
 
   const secretName = secretArn
