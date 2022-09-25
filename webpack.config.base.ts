@@ -1,6 +1,7 @@
 import { Configuration } from "webpack";
 import * as path from "path";
 import * as SLSW from "serverless-webpack";
+import * as PnpWebpackPlugin from "pnp-webpack-plugin";
 
 /**
  * Produces the webpack config object shared between lambdas
@@ -22,6 +23,10 @@ function getWebpackConfig(context: string, slsw: typeof SLSW): Configuration {
       extensions: [".tsx", ".ts", ".json", ".mjs", ".js"],
       symlinks: false,
       cacheWithContext: false,
+      plugins: [PnpWebpackPlugin],
+    },
+    resolveLoader: {
+      plugins: [PnpWebpackPlugin.moduleLoader(module)],
     },
     output: {
       libraryTarget: "commonjs",
