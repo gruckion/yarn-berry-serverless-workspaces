@@ -261,7 +261,6 @@ __metadata:
     src: "link:./src"
     ts-loader: ^9.4.1
     ts-node: ^10.9.1
-    tsconfig-paths-webpack-plugin: ^4.0.0
     typescript: ^4.8.3
     webpack: ^5.74.0
   languageName: unknown
@@ -2574,7 +2573,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.10.0, enhanced-resolve@npm:^5.7.0":
+"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.10.0":
   version: 5.10.0
   resolution: "enhanced-resolve@npm:5.10.0"
   dependencies:
@@ -4629,7 +4628,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json5@npm:^2.1.2, json5@npm:^2.2.0, json5@npm:^2.2.1":
+"json5@npm:^2.1.2, json5@npm:^2.2.0":
   version: 2.2.1
   resolution: "json5@npm:2.2.1"
   bin:
@@ -5068,13 +5067,6 @@ __metadata:
   dependencies:
     brace-expansion: ^1.1.7
   checksum: 850cca179cad715133132693e6963b0db64ab0988c4d211415b087fc23a3e46321e2c5376a01bf5623d8782aba8bdf43c571e2e902e51fdce7175c7215c29f8b
-  languageName: node
-  linkType: hard
-
-"minimist@npm:^1.2.6":
-  version: 1.2.6
-  resolution: "minimist@npm:1.2.6"
-  checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
   languageName: node
   linkType: hard
 
@@ -6640,13 +6632,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"strip-bom@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "strip-bom@npm:3.0.0"
-  checksum: 8d50ff27b7ebe5ecc78f1fe1e00fcdff7af014e73cf724b46fb81ef889eeb1015fc5184b64e81a2efe002180f3ba431bdd77e300da5c6685d702780fbf0c8d5b
-  languageName: node
-  linkType: hard
-
 "strip-dirs@npm:^2.0.0":
   version: 2.1.0
   resolution: "strip-dirs@npm:2.1.0"
@@ -6998,28 +6983,6 @@ __metadata:
   version: 9.6.0
   resolution: "ts-toolbelt@npm:9.6.0"
   checksum: 9f35fd95d895a5d32ea9fd2e532a695b0bae6cbff6832b77292efa188a0ed1ed6e54f63f74a8920390f3d909a7a3adb20a144686372a8e78b420246a9bd3d58a
-  languageName: node
-  linkType: hard
-
-"tsconfig-paths-webpack-plugin@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "tsconfig-paths-webpack-plugin@npm:4.0.0"
-  dependencies:
-    chalk: ^4.1.0
-    enhanced-resolve: ^5.7.0
-    tsconfig-paths: ^4.0.0
-  checksum: 7ff7d63c1153e6dd30ce660b006495ae5cb5cbb78b30bb59b3cb627567325d4af52c7a69dda8aec7b94d576f5385581a69307472992954c40fe6949564155397
-  languageName: node
-  linkType: hard
-
-"tsconfig-paths@npm:^4.0.0":
-  version: 4.1.0
-  resolution: "tsconfig-paths@npm:4.1.0"
-  dependencies:
-    json5: ^2.2.1
-    minimist: ^1.2.6
-    strip-bom: ^3.0.0
-  checksum: e4b101f81b2abd95499d8145e0aa73144e857c2c359191058486cef101b7accae22a69114e5d5814a13d5ab3b0bae70dd0c85bcdb7e829bbe1bfda5c9067c9b1
   languageName: node
   linkType: hard
 
