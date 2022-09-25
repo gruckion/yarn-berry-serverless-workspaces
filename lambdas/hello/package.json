@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@serverless/typescript": "^3.21.0",
-    "@types/aws-lambda": "^8.10.104",
-    "@types/node": "^18.7.20",
+    "@types/aws-lambda": "^8.10.106",
+    "@types/node": "^18.7.21",
     "@yarnpkg/plugin-typescript": "^4.0.0-rc.20",
     "@yarnpkg/pnpify": "^4.0.0-rc.20",
     "esbuild-loader": "^2.20.0",
