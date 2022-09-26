@@ -22,7 +22,7 @@
     "mongodb-client-encryption": "^2.2.1",
     "node-gyp": "^9.1.0",
     "snappy": "^7.1.2",
-    "source-map-support": "^0.5.19"
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.21.0",
